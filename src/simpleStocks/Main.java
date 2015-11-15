@@ -91,9 +91,9 @@ public class Main {
 				}
 
 				// print this output after the first iteration
+				System.out.println();
 				System.out.println("Input 1 to make a trade and see the results,");
-				System.out.println(
-						"GBCE to see the All Share Index or press enter without any input to stop the program");
+				System.out.println("GBCE to see the All Share Index or press enter without any input to stop the program");
 
 			}
 
@@ -148,11 +148,15 @@ public class Main {
 
 		double geometricMean = 0.0;
 		double product = 1.0;
+		int i=0;
 		for (Stock stock : stocksList) {
-			product *= stock.getStockPrice();
-			geometricMean = Math.pow(product, 1.0 / (double)stocksList.size());
-
+			if (stock.stockPrice15!=0){
+			i++;	
+			product *= stock.stockPrice15;
+			}
 		}
+		geometricMean = Math.pow(product, 1.0 / (double)i);
+
 		return geometricMean;
 	}
 
