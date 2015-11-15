@@ -103,6 +103,21 @@ public class Main {
 
 	}
 
+	
+	// It initializes the stocksList Arraylist with sample data
+	private static void createSampleStocks(ArrayList<Stock> stocksList) {
+		Stock tea = new Stock("TEA", 0, 100);
+		Stock pop = new Stock("POP", 8, 100);
+		Stock ale = new Stock("ALE", 23, 60);
+		Stock gin = new Stock("GIN", 8, 0.02, 100);
+		Stock joe = new Stock("JOE", 13, 250);
+		stocksList.add(tea);
+		stocksList.add(pop);
+		stocksList.add(ale);
+		stocksList.add(gin);
+		stocksList.add(joe);
+	}
+	
 	// returns the stock price, based on the trades of the last 15'
 	private static double getStockPrice(String buffStockName, ArrayList<StockTrade> tradesList) {
 		double stockPrice15;
@@ -124,20 +139,6 @@ public class Main {
 		stockPrice15 = sumOfProduct / sumQuanOfShares;
 		return stockPrice15;
 
-	}
-
-	// It initializes the stocksList Arraylist with sample data
-	private static void createSampleStocks(ArrayList<Stock> stocksList) {
-		Stock tea = new Stock("TEA", 0, 100);
-		Stock pop = new Stock("POP", 8, 100);
-		Stock ale = new Stock("ALE", 23, 60);
-		Stock gin = new Stock("GIN", 8, 0.02, 100);
-		Stock joe = new Stock("JOE", 13, 250);
-		stocksList.add(tea);
-		stocksList.add(pop);
-		stocksList.add(ale);
-		stocksList.add(gin);
-		stocksList.add(joe);
 	}
 
 	//returns the GBCE index of all stocks that have a stock price based on the trades
