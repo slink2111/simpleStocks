@@ -48,9 +48,9 @@ public class Main {
 				}
 
 				else {
-
+ 
 					// insert stockName from input
-					System.out.println("Insert stock name");
+					System.out.println("Insert stock name, be careful it is case sensitive");
 					buffStockName = br.readLine();
 
 					// insert price from input
