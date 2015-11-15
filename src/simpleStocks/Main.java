@@ -101,10 +101,6 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		for (int i = 0; i < tradesList.size(); i++) {
-			System.out.println(tradesList.get(i));
-		}
-
 	}
 
 	// returns the stock price, based on the trades of the last 15'
@@ -150,9 +146,9 @@ public class Main {
 		double product = 1.0;
 		int i=0;
 		for (Stock stock : stocksList) {
-			if (stock.stockPrice15!=0){
+			if (stock.getStockPrice()!=0){
 			i++;	
-			product *= stock.stockPrice15;
+			product *= stock.getStockPrice();
 			}
 		}
 		geometricMean = Math.pow(product, 1.0 / (double)i);
