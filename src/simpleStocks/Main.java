@@ -140,18 +140,21 @@ public class Main {
 		stocksList.add(joe);
 	}
 
+	//returns the GBCE index of all stocks that have a stock price based on the trades
+	//recorded the last 15' 
 	private static double geometricMean(ArrayList<Stock> stocksList) {
 
 		double geometricMean = 0.0;
 		double product = 1.0;
 		int i=0;
 		for (Stock stock : stocksList) {
+			//if a stock doesn't have a stock price it does not included in the calculation
 			if (stock.getStockPrice()!=0){
-			i++;	
-			product *= stock.getStockPrice();
+			i++;	//counts the stocks which have stock price
+			product *= stock.getStockPrice(); //calculates the product of stock prices
 			}
 		}
-		geometricMean = Math.pow(product, 1.0 / (double)i);
+		geometricMean = Math.pow(product, 1.0 / i);
 
 		return geometricMean;
 	}
