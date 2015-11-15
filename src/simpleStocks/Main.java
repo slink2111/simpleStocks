@@ -109,10 +109,10 @@ public class Main {
 
 	// returns the stock price, based on the trades of the last 15'
 	private static double getStockPrice(String buffStockName, ArrayList<StockTrade> tradesList) {
-		int stockPrice15;
-		int sumQuanOfShares = 0; // calculation of sums of the quantities of a
+		double stockPrice15;
+		double sumQuanOfShares = 0.0; // calculation of sums of the quantities of a
 									// share on the last 15' trades
-		int sumOfProduct = 0; // calculation of sum of products of the quantity
+		double sumOfProduct = 0.0; // calculation of sum of products of the quantity
 								// and price on the last 15' trades
 
 		for (StockTrade buffTrade : tradesList) {
@@ -150,7 +150,7 @@ public class Main {
 		double product = 1.0;
 		for (Stock stock : stocksList) {
 			product *= stock.getStockPrice();
-			geometricMean = Math.pow(product, 1.0 / (double) stocksList.size());
+			geometricMean = Math.pow(product, 1.0 / (double)stocksList.size());
 
 		}
 		return geometricMean;
